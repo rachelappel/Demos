@@ -1,0 +1,29 @@
+{
+  "bindings": [
+    {
+      "name": "myTimer",
+      "type": "timerTrigger",
+      "direction": "in",
+      "schedule": "0 15 10 * * *"
+    },
+    {
+      "type": "table",
+      "name": "inputTable",
+      "tableName": "Subscription",
+      "partitionKey": "Subscription",
+      "take": 50,
+      "connection": "AzureWebJobsStorage",
+      "direction": "in"
+    },
+    {
+      "type": "sendGrid",
+      "name": "message",
+      "apiKey": "SendGridKey",
+      "direction": "out",
+      "to": "azure@contoso.com",
+      "from": "azure@contoso.com",
+      "subject": "Azure news"
+    }
+  ],
+  "disabled": false
+}
