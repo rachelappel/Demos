@@ -4,6 +4,7 @@ using System.Net;
 
 public static async Task<HttpResponseMessage> Run(HttpRequestMessage req, TraceWriter log, IQueryable<Ticket> ticketsTable)
 {
+    //test
     var count = GetRaffleItemCount(req,ticketsTable);
     return req.CreateResponse(HttpStatusCode.OK, new {
         Count = count.ToString()
