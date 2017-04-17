@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title>Course Completion Certificate</title>
+    <meta name='description' content='Course Completion Certificate'>        
+    <style>
+    body { font-family: 'Times New Roman', Times, serif; }
+    .border { width:95%; height:600px; text-align:center; border: 10px solid #000066; display: table; position: absolute; }
+    .border2 { height:550px; margin-left: 20px; margin-right: 20px; margin-top:20px; padding:10;  text-align:center; border: 5px solid #000066 }
+    .banner {font-size:50px; font-weight:bold; color:#000066}
+    .text { font-size:25px; font-style:italic; }
+    .name { font-size:30px; font-weight: bold; color: #000066}
+    .course {font-size:30px; }
+    .date {font-size:25px;}
+    </style>    
+</head>
+<body>
+    <div class='border'>
+        <div class='border2'>
+            <br/><br/><br/><br/>
+            <span class="banner">Certificate of Completion</span>
+            <br/><br/>
+            <span class='text'>This is to certify that</span><br><br>
+            <span class='name'>{NAME}</span><br/><br/>
+            <span class='text'>has completed the course</span> <br/><br/>
+            <span class='course'>{COURSE}</span> <br/><br/>  
+            <span class='text'>dated</span><br>
+            <span class='date' id='courseDate'>{DATE}</span><br>
+            <script>
+            var courseDate = new Date().toDateString();
+            document.getElementById('courseDate').innerHTML=courseDate;
+            </script>
+        </div>
+    </div>
+</body>
+</html>
